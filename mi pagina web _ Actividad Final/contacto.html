@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contacto</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Contacto</h1>
+        <nav>
+            <ul>
+                <li><a href="Pagina principal.html">Inicio</a></li>
+                <li><a href="index.html">Portada</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="aficiones.html">Aficiones</a></li>
+                <li><a href="juego.html">Juego</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Contacta conmigo</h2>
+        <form method="POST" action="contacto -falso.html">
+			<h3>Formulario de Contacto</h3>
+			
+            <label for="nombre">Nombre*:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+
+            <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"><br>
+
+            <label for="email">e-mail*:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="telefono">Teléfono móvil:</label>
+            <input type="tel" id="telefono" name="telefono"><br>
+
+            <label for="color_favorito">Color favorito:</label>
+            <input type="color" id="color_favorito" name="color_favorito"><br>
+			
+			<label for="pokemon">Pokemon inicial</label>: 
+			<select id="pokemon" name= "pokemon">
+				<option value="1">Bulbasaur</option>
+				<option value="4">Charmander</option>
+				<option value="7">Squirtle</option>
+				<option value="54" selected>Psyduck</option>
+			</select>
+			
+			
+            <label for="mensaje">Mensaje*:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea><br>
+			<p><output id="salida">"los espacios con asterisco son obligatorios"</ouput></p>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <h2>Redes Sociales</h2>
+        <ul>
+            <li>Instagram: juxray300</li>
+            <li>Email: joan.ariza@enti.cat</li>
+            <li>Discord: juxray300</li>
+        </ul>
+        <figure>
+            <img src="Sonic-portugues.jpeg" alt="sonic">
+        </figure>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Joan Ariza</p>
+        <nav>
+            <ul>
+                <li><a href="Pagina principal.html">Inicio</a></li>
+                <li><a href="index.html">Portada</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="aficiones.html">Aficiones</a></li>
+                <li><a href="juego.html">Juego</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="contacto navidad.html">Cambiar a estilo navideño</a>
+        </div>
+    </footer>
+</body>
+</html>
