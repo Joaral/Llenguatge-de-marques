@@ -52,12 +52,12 @@
     </header>
     <main>
         <h2>Juegaco</h2>
-        <form>
+        <form onsubmit="check_numero(); return false;">
             <h3>Adivina el Número</h3>
             <p>Introduce un número entre el 1 y el 100 para adivinar el número</p>
             <p>Número: <input type="text" id="juego_numero" name="numero"/></p>
             <p><output id="resultado">Introduce el número en el campo de texto</output></p>
-            <p><input type="button" value="¡Adivina!" onClick="check_numero();"/></p>
+            <p><input type="submit" value="¡Adivina!"/></p>
         </form>
         <h2>Próximamente</h2>
         <p>Esta sección contendrá juegos interactivos en JavaScript que estamos desarrollando. ¡Estad atentos!</p>
@@ -78,12 +78,6 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="juego navidad.html">Cambiar a estilo navideño</a>
-        </div>
     </footer>
-	<script>
-		document.getElementById("info").innerHTML = info;	
-	</script>
 </body>
 </html>
