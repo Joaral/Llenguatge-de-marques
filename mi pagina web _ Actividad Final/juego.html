@@ -5,14 +5,19 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <script>
-	let numeroMax = 100;
-	let numeroMin = 1;
+    let numeroMax = 100;
+    let numeroMin = 1;
     let numero_random = Math.floor(Math.random() * numeroMax) + 1;
     console.log("El número a adivinar es: " + numero_random);
-	
-    function check_numero() {
+
+    let fallos = 0; // Contador de fallos
+
+    function check_numero(event) {
+        event.preventDefault(); // Evitar que el formulario recargue la página
+
         let valor = parseInt(document.getElementById("juego_numero").value);
         let resultado = document.getElementById("resultado");
+        let enviarBtn = document.getElementById("enviarBtn"); // Referencia al botón
 
         if (isNaN(valor)) {
             resultado.textContent = "Por favor, introduce un número válido.";
@@ -20,20 +25,27 @@
         }
 
         if (valor < numeroMin) {
-            resultado.textContent = "El número debe ser mayor o igual a "+numeroMin;
+            resultado.textContent = "El número debe ser mayor o igual a " + numeroMin;
             return;
         } else if (valor > numeroMax) {
-            resultado.textContent = "El número debe ser "+numeroMax+" o menor.";
+            resultado.textContent = "El número debe ser " + numeroMax + " o menor.";
             return;
         }
 
+        // Incrementar contador de fallos si la respuesta es incorrecta
         if (valor < numero_random) {
+            fallos++;
             resultado.textContent = "El número a adivinar es mayor que " + valor + ".";
         } else if (valor > numero_random) {
+            fallos++;
             resultado.textContent = "El número a adivinar es menor que " + valor + ".";
         } else {
             resultado.textContent = "¡Lo has adivinado!";
+            enviarBtn.disabled = true; // Deshabilitar el botón al acertar el número
         }
+
+        // Actualizar el contador de fallos
+        document.getElementById("contadorFallos").textContent = "Fallos: " + fallos;
     }
 </script>
 <body>
@@ -52,13 +64,16 @@
     </header>
     <main>
         <h2>Juegaco</h2>
-        <form onsubmit="check_numero(); return false;">
+        <form onsubmit="check_numero(event)">
             <h3>Adivina el Número</h3>
             <p>Introduce un número entre el 1 y el 100 para adivinar el número</p>
-            <p>Número: <input type="text" id="juego_numero" name="numero"/></p>
+            <p>Número: <input type="text" id="juego_numero" name="numero" /></p>
             <p><output id="resultado">Introduce el número en el campo de texto</output></p>
-            <p><input type="submit" value="¡Adivina!"/></p>
+            <p><input type="submit" id="enviarBtn" value="¡Adivina!" /></p>
         </form>
+        <!-- Mostrar contador de fallos -->
+        <p id="contadorFallos">Fallos: 0</p>
+
         <h2>Próximamente</h2>
         <p>Esta sección contendrá juegos interactivos en JavaScript que estamos desarrollando. ¡Estad atentos!</p>
         <figure>
